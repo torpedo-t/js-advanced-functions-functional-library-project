@@ -30,7 +30,7 @@ let myMap = (collection, callback) => {
 // to account for the fact that the first element of the collection has already been accounted for.
 let myReduce = (collection, callback, acc = 0) => {
     let newCollection = helperFunction(collection)
-    // let accumulator = acc === undefined ? 0 : acc
+    let accumulator = acc === undefined ? 0 : acc
     for (let i = 0; i < newCollection.length; i++) {
         accumulator = callback(accumulator, newCollection[i], i, collection)
     }
