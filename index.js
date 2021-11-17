@@ -19,3 +19,10 @@ let myMap = (collection, callback) => {
     }
     return newAry
 }
+
+let myReduce = (collection, callback, acc) => {
+    let newCollection = helperFunction(collection)
+    for (let i = 0; i < newCollection.length; i++) {
+        
+    }
+}
