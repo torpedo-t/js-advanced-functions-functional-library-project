@@ -28,11 +28,14 @@ let myMap = (collection, callback) => {
 // Hint: For the case when a start value for the accumulator is not passed in as an argument
 // , think about how you'll need to adjust your function 
 // to account for the fact that the first element of the collection has already been accounted for.
-let myReduce = (collection, callback, acc = 0) => {
+let myReduce = (collection, callback, acc) => {
     let newCollection = helperFunction(collection)
-    let accumulator = acc === undefined ? 0 : acc
-    for (let i = 0; i < newCollection.length; i++) {
-        accumulator = callback(accumulator, newCollection[i], i, collection)
+    if (!acc) {  
+        acc = newCollection[0]
+        newCollection = newCollection.slice(1)
     }
-    return accumulator
+    for (let i = 0; i < newCollection.length; i++) {
+        acc = callback(acc, newCollection[i], newCollection)
+    }
+    return acc
 }
