@@ -75,8 +75,13 @@ let myFilter = (collection, predicate) => {
 // collection is an array of integers or strings
 // return value is an integer resembling the number of values in the collection
 let mySize = (collection) => {
+    if (collection.length) {
+        let size = collection.length
+        return size
+    }
     for (let i = 0; i < collection.length; i++) {
-        
+        return 1
+        // console.log(element)
     //     // after the first iteration we want to return 1
     //     // after each iteration following the first add 1
     //     // after successfully iterating through the entire collection return the sum 
